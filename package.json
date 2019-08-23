@@ -7,7 +7,8 @@
     "storybook:build": "build-storybook",
     "build": "npm run app:build",
     "start": "npm run app:start",
-    "test": "jest --colors"
+    "test": "jest --colors",
+    "lint": "eslint \"src/**/*.{js,jsx,mjs,ts,tsx}\""
   },
   "jest": {
     "preset": "react-zeroconfig"
@@ -23,7 +24,8 @@
       "jest --colors --findRelatedTests"
     ],
     "*.md": [
-      "markdown-source-import"
+      "markdown-source-import",
+      "git add"
     ]
   },
   "eslintConfig": {
