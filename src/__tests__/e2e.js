@@ -6,11 +6,9 @@ describe('E2E Sample', () => {
     const page = await browser.newPage();
     
     await page.goto('http://localhost:3100');
-    await page.waitForSelector('#app h1');
+    await page.waitForSelector('#app > h1');
     
-    const header = await page.$eval('h1', e => e.innerHTML);
-    
-    expect(header).toEqual('Hello World!');
+    await expect(page.$eval('#app > h1', e => e.innerHTML)).resolves.toEqual('Hello World!');
     
     browser.close();
   });
