@@ -5,31 +5,47 @@
     "app:start": "zeroconfig-webapp-scripts start app",
     "storybook:start": "start-storybook",
     "storybook:build": "build-storybook",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
     "build": "npm run app:build",
     "start": "npm run app:start",
-    "test": "jest --colors",
-    "test:e2e:build": "sh e2e/build.sh"
+    "test": "jest --colors"
   },
   "jest": {
     "preset": "react-zeroconfig"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test"
+      "pre-commit": "lint-staged"
     }
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,mjs}": [
+      "eslint",
+      "jest --colors --findRelatedTests"
+    ],
+    "*.md": [
+      "markdown-source-import"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "eslintIgnore": [
+    "src/**/public/*",
+    "src/**/*.d.ts"
+  ],
   "dependencies": {
-    "react": "^16.8.6",
-    "react-app-polyfill": "^1.0.1",
-    "react-dom": "^16.8.6"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "@storybook/react": "^5.1.1",
-    "cypress": "^3.3.1",
-    "husky": "^2.4.0",
-    "jest": "^24.8.0",
-    "react-zeroconfig": "^3.3.0-alpha.1"
+    "@storybook/addon-storysource": "^5.1.11",
+    "@storybook/react": "^5.1.11",
+    "eslint": "^6.2.1",
+    "eslint-config-react-app": "^5.0.1",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.3",
+    "markdown-source-import": "^1.0.3",
+    "react-zeroconfig": "^3.14.0"
   }
 }
