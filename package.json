@@ -8,24 +8,20 @@
     "build": "npm run app:build",
     "start": "npm run app:start",
     "test": "jest --colors",
-    "lint": "eslint \"src/**/*.{js,jsx,mjs,ts,tsx}\""
+    "lint": "eslint \"src/**/*.{js,jsx,mjs}\""
   },
   "jest": {
     "preset": "react-zeroconfig"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "markdown-source-import \"{,!(node_modules)/**/}*.md\" --git-add && lint-staged"
     }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,mjs}": [
       "eslint",
       "jest --colors --findRelatedTests"
-    ],
-    "*.md": [
-      "markdown-source-import",
-      "git add"
     ]
   },
   "eslintConfig": {
@@ -47,7 +43,7 @@
     "husky": "^3.0.4",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.3",
-    "markdown-source-import": "^1.0.3",
+    "markdown-source-import": "^1.1.0",
     "react-zeroconfig": "^3.14.0"
   }
 }

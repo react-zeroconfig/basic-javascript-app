@@ -10,7 +10,7 @@ npm start
 npm run build
 ```
 
-# Source
+# Source Import Sample
 
 ## Jest 
 <!-- import src/__tests__/sample.js -->
