@@ -14,7 +14,10 @@ npm run build
 
 ## Jest 
 <!-- import src/__tests__/*.{js,jsx} --title-tag h3 -->
-<h3>src/__tests__/e2e.js</h3>
+
+### src/\_\_tests\_\_/e2e.js
+
+
 ```js
 import puppeteer from 'puppeteer';
 
@@ -32,7 +35,11 @@ describe('E2E Sample', () => {
   });
 });
 ```
-<h3>src/__tests__/sample.js</h3>
+
+
+### src/\_\_tests\_\_/sample.js
+
+
 ```js
 describe('Sample', () => {
   test('Test', () => {
@@ -40,6 +47,7 @@ describe('Sample', () => {
   });
 });
 ```
+
 <!-- importend -->
 
 <!-- import src/**/*.test.{js,jsx} --title-tag h3 -->
@@ -47,7 +55,10 @@ describe('Sample', () => {
 
 ## Storybook
 <!-- import src/**/*.stories.{js,jsx} --title-tag h3 -->
-<h3>src/app/components/Title.stories.jsx</h3>
+
+### src/app/components/Title.stories.jsx
+
+
 ```jsx
 import { storiesOf } from '@storybook/react';
 import React from 'react';
@@ -61,4 +72,5 @@ storiesOf('Title', module)
     <Title text="World?"/>
   ));
 ```
+
 <!-- importend -->
